@@ -13,7 +13,7 @@ while (true)
     empleado = Console.ReadLine();
 
     Console.Write("Ingrese las horas trabajadas: ");
-    if (!ushort.TryParse(Console.ReadLine(), out horasTrabajadas))
+    if (!ushort.TryParse(Console.ReadLine(), out horasTrabajadas) || horasTrabajadas == 0)
     {
         Console.WriteLine("Valor inválido. Presione una tecla para reintentar...");
         Console.ReadKey();
@@ -27,7 +27,7 @@ while (true)
     Console.WriteLine("====================================");
 
     Console.Write("Ingrese el pago por hora en RD$: ");
-    if (!decimal.TryParse(Console.ReadLine(), out pagoHora))
+    if (!decimal.TryParse(Console.ReadLine(), out pagoHora) || pagoHora <= 0)
     {
         Console.WriteLine("Valor inválido. Presione una tecla para reintentar...");
         Console.ReadKey();
